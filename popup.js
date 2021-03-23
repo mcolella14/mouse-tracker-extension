@@ -54,6 +54,10 @@ const getDimensions = () => {
 chrome.runtime.onMessage.addListener(async (msg) => {
   console.log(msg);
   if (msg.origin == "background") {
+    const coordsObject = {
+      mouseActions: msg.content,
+    };
+
     const [tab] = await chrome.tabs.query({
       active: true,
       currentWindow: true,
@@ -64,7 +68,9 @@ chrome.runtime.onMessage.addListener(async (msg) => {
         function: getDimensions,
       },
       (results) => {
-        drawCoords(msg.content, results[0].result);
+        const dimensions = results[0].result;
+        drawCoords(coordsObject.mouseActions, dimensions);
+        coordsObject.screenDimensions = dimensions;
       }
     );
 
@@ -86,7 +92,7 @@ chrome.runtime.onMessage.addListener(async (msg) => {
     copyEl.innerText = "Copy Coordinates";
     copyEl.onclick = () => {
       coordTable = document.createElement("textarea");
-      coordTable.innerText = JSON.stringify(msg.content);
+      coordTable.innerText = JSON.stringify(coordsObject);
       document.body.appendChild(coordTable);
       coordTable.select();
       document.execCommand("copy");
