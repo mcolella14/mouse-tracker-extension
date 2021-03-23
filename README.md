@@ -10,13 +10,47 @@ Chrome extension that can record mouse movements/clicks on a page and export the
 
 ## Export format
 ```json
-[
-  { "action": "move", "coords": { "x": 1292, "y": 114 } },
-  { "action": "move", "coords": { "x": 1291, "y": 113 } },
-  { "action": "move", "coords": { "x": 1290, "y": 113 } },
-  { "action": "click", "coords": { "x": 1290, "y": 113 } },
-  { "action": "move", "coords": { "x": 1290, "y": 113 } },
-  { "action": "move", "coords": { "x": 1286, "y": 119 } },
-  { "action": "move", "coords": { "x": 1286, "y": 118 } }
-]
+{
+    "mouseActions": [
+        {
+            "action": "move",
+            "coords": {
+                "x": 1764,
+                "y": 114
+            }
+        },
+        {
+            "action": "move",
+            "coords": {
+                "x": 1762,
+                "y": 116
+            }
+        },
+        {
+            "action": "click",
+            "coords": {
+                "x": 1762,
+                "y": 116
+            }
+        },
+        {
+            "action": "move",
+            "coords": {
+                "x": 1762,
+                "y": 115
+            }
+        },
+        {
+            "action": "move",
+            "coords": {
+                "x": 1766,
+                "y": 99
+            }
+        }
+    ],
+    "screenDimensions": {
+        "height": 920,
+        "width": 1918
+    }
+}
 ```
