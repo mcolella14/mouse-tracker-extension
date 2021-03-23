@@ -54,3 +54,7 @@ Chrome extension that can record mouse movements/clicks on a page and export the
     }
 }
 ```
+
+## Installation
+1. Download this repo as a zip file and extract.
+3. Follow <a href="https://stackoverflow.com/a/24577660/10962644">these instructions</a> to install the unpacked extension.
