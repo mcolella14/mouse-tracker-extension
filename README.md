@@ -1,6 +1,6 @@
 # mouse-tracker-extension
 
-Chrome extension that can record mouse movements/clicks on a page and export them as a JSON array. Also draws a nice little picture of the movements in the popup window.
+Chrome extension that can record mouse movements/clicks on a page and export them as a JSON object. Also draws a nice little picture of the movements in the popup window.
 
 ## Known bugs/issues
 
